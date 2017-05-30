@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PushTime</string>
+    <string name="action_settings">Settings</string>
+    <string name="texsuprimeravez">Si es su primera vez por aqui, abra una cuenta</string>
+    <string name="inemail">MiCorreo@Ejemplo.com</string>
+    <string name="inpass">MiContraseña...</string>
+    <string name="registrar">Crear cuenta </string>
+    <string name="iniciar">Iniciar Sesión</string>
+
+</resources>

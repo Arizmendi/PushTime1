@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "119833714173",
+    "firebase_url": "https://pushtime-66d4a.firebaseio.com",
+    "project_id": "pushtime-66d4a",
+    "storage_bucket": "pushtime-66d4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119833714173:android:2204af73bac0c767",
+        "android_client_info": {
+          "package_name": "com.monstersoftware.pushtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119833714173-19p2mkb34b2mafv7v6t06sbf4an07s2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQL4VK7WwoN0GuONXh3yjCc7BLeeEFq54"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
