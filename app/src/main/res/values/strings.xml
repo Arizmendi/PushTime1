@@ -6,5 +6,13 @@
     <string name="inpass">MiContraseña...</string>
     <string name="registrar">Crear cuenta </string>
     <string name="iniciar">Iniciar Sesión</string>
+    <string name="title_activity_listade_proyectos">Proyectos...</string>
+    <string name="title_activity_registro">Registro de cuenta nueva...</string>
+    <string name="cerrarSesion">Cerrar Sesion</string>
+    <string name="correoElectronico">Correo electrónico:</string>
+    <string name="confirmarCorreoElectronico">Confirmar correo:</string>
+    <string name="contraseña">Contraseña:</string>
+    <string name="confirmarContraseña">Confirmar contraseña:</string>
+    <string name="registrarse"> Registrarse:</string>
 
 </resources>

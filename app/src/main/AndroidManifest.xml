@@ -19,6 +19,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ListadeProyectos"
+            android:label="@string/title_activity_listade_proyectos"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monstersoftware.pushtime.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activityRegistro"
+            android:label="@string/title_activity_registro"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monstersoftware.pushtime.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.monstersoftware.pushtime;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null){
                     Log.i("SESION","sesion iniciadacon email:"+ user.getEmail());
+                    goProyectos();
+
+
                 }else{
                     Log.i("SESION","Sesion cerrada");
 
@@ -61,49 +65,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-    private void registrar (String email, String pass){
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    Log.i("SESION","Usuario creado correctamente");
-                }else{
-                    Log.e("SESION",task.getException().getMessage()+"");
-                }
 
-            }
-        });
-
+    public void goProyectos() {
+        Intent intent = new Intent(this,ListadeProyectos.class);
+        startActivity(intent);
     }
-    private void iniciar (String email, String pass){
+
+
+    public void iniciar (String email, String pass){
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
 
 
 
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public void onClick(View view) {
@@ -114,14 +90,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 iniciar(emailini ,passini);
                 break;
             case R.id.register:
-                String emailreg = editTextEmail.getText().toString();
-                String passreg = editTextPass.getText().toString();
-                registrar(emailreg ,passreg);
+                goRegistrarse();
                 break;
 
 
 
         }
+    }
+
+    private void goRegistrarse() {
+        Intent intent = new Intent(this,activityRegistro.class);
+        startActivity(intent);
     }
 
     @Override
