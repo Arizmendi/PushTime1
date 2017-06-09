@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null){
-                    Log.i("SESION","sesion iniciadacon email:"+ user.getEmail());
+                    Log.i("SESION","sesion iniciada con email:"+ user.getEmail());
                     goProyectos();
 
 
