@@ -6,24 +6,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import OBJETOS.FirebaseReferences;
-import OBJETOS.Usuario;
 
 public class ListadeProyectos extends AppCompatActivity {
     TextView prueba;
@@ -54,13 +45,14 @@ public class ListadeProyectos extends AppCompatActivity {
     private void database() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            Toast.makeText(ListadeProyectos.this,""+ user,Toast.LENGTH_LONG).show();
-            prueba = (TextView)findViewById(R.id.prueba);
-            prueba.setText("" + user);
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference("Usuario");
 
-            myRef.setValue(user.getEmail());
+            prueba = (TextView)findViewById(R.id.prueba);
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference usuarioref = database.getReference("Usuarios");
+            String email= user.getEmail().toString();
+            prueba.setText("" + email);
+            usuarioref.child(user.getUid()).setValue(email);
 
 
         } else {

@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }else{
                     Log.i("SESION","Sesion cerrada");
+                    Toast.makeText(MainActivity.this,"Secion cerrada...  :(",Toast.LENGTH_LONG).show();
 
                 }
 
@@ -73,7 +75,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void iniciar (String email, String pass){
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass);
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if (!task.isSuccessful()) {
+                    Toast.makeText(MainActivity.this,"El correo o la contraseña se escribio mal",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 
 

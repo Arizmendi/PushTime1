@@ -17,13 +17,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import OBJETOS.FirebaseReferences;
-import OBJETOS.Usuario;
 
 public class activityRegistro extends AppCompatActivity {
     EditText editTextemail1,editTextemail2,editTextpass1,editTextpass2;
