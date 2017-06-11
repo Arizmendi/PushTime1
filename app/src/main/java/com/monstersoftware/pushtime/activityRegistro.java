@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,6 +28,8 @@ import OBJETOS.Usuario;
 public class activityRegistro extends AppCompatActivity {
     EditText editTextemail1,editTextemail2,editTextpass1,editTextpass2;
     Button boton;
+    FirebaseAuth mAuthListener;
+
 
 
     @Override
@@ -75,6 +78,7 @@ public class activityRegistro extends AppCompatActivity {
 
 
 
+
             }
         });
 
@@ -97,9 +101,12 @@ public class activityRegistro extends AppCompatActivity {
 
     }
 
+
+
     private void goProyectos() {
         Intent intent = new Intent(this,ListadeProyectos.class);
         startActivity(intent);
+
     }
 
     private void registrar(String email, String pass) {
@@ -108,8 +115,8 @@ public class activityRegistro extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Log.d("TAG", "createUserWithEmail:onComplete:" + task.isSuccessful());
-                goProyectos();
                 Toast.makeText(activityRegistro.this,"Todo correcto con su cuenta",Toast.LENGTH_SHORT).show();
+                goProyectos();
 
 
                 if (!task.isSuccessful()) {

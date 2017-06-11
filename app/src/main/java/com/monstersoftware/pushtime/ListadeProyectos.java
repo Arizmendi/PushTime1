@@ -10,6 +10,8 @@ import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +26,7 @@ import OBJETOS.FirebaseReferences;
 import OBJETOS.Usuario;
 
 public class ListadeProyectos extends AppCompatActivity {
+    TextView prueba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +43,33 @@ public class ListadeProyectos extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference usuarioRef = database.getReference(FirebaseReferences.USER_REFERENCE);
+
+        database();
+
 
 
 
     }
+
+    private void database() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            Toast.makeText(ListadeProyectos.this,""+ user,Toast.LENGTH_LONG).show();
+            prueba = (TextView)findViewById(R.id.prueba);
+            prueba.setText("" + user);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("Usuario");
+
+            myRef.setValue(user.getEmail());
+
+
+        } else {
+                // No user is signed in
+        }
+        //System.out.println("Successfully fetched user data: " );
+
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
