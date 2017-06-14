@@ -37,6 +37,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.monstersoftware.pushtime.MainActivity" />
         </activity>
+        <activity
+            android:name=".AgregarNuevoProyecto"
+            android:label="@string/title_activity_agregar_nuevo_proyecto"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monstersoftware.pushtime.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

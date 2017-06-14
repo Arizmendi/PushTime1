@@ -30,8 +30,7 @@ public class ListadeProyectos extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                gotoAgregarproyecto();
             }
         });
 
@@ -40,6 +39,11 @@ public class ListadeProyectos extends AppCompatActivity {
 
 
 
+    }
+
+    private void gotoAgregarproyecto() {
+        Intent intent = new Intent(this,AgregarNuevoProyecto.class);
+        startActivity(intent);
     }
 
     private void database() {

@@ -14,5 +14,22 @@
     <string name="contraseña">Contraseña:</string>
     <string name="confirmarContraseña">Confirmar contraseña:</string>
     <string name="registrarse"> Registrarse:</string>
+    <string name="title_activity_agregar_nuevo_proyecto">Agregar Nuevo Proyecto</string>
+
+
+
+
+
+
+    <string name="nombredeProyecto"> Nombre del nuevo proyecto:</string>
+    <string name="Fechaini"> Fecha de inicio:</string>
+    <string name="FechaFin"> Fecha de termino (Opcional):</string>
+    <string name="caledario"> calendario:</string>
+
+
+
+
+
+
 
 </resources>
