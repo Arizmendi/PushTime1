@@ -9,18 +9,17 @@ import java.util.List;
 
 public class Proyecto {
     String Nombre;
-    Date fechain ;
-    Date fechafin ;
-    List<Tarea> tarea;
+    String fechain;
+    String fechafin;
 
-    public Proyecto() {
-    }
 
-    public Proyecto(String nombre, Date fechain, Date fechafin, List<Tarea> tarea) {
+
+
+    public Proyecto(String nombre, String fechain, String fechafin) {
         Nombre = nombre;
         this.fechain = fechain;
         this.fechafin = fechafin;
-        this.tarea = tarea;
+
     }
 
     public String getNombre() {
@@ -31,27 +30,21 @@ public class Proyecto {
         Nombre = nombre;
     }
 
-    public Date getFechain() {
+    public String getFechain() {
         return fechain;
     }
 
-    public void setFechain(Date fechain) {
+    public void setFechain(String fechain) {
         this.fechain = fechain;
     }
 
-    public Date getFechafin() {
+    public String getFechafin() {
         return fechafin;
     }
 
-    public void setFechafin(Date fechafin) {
+    public void setFechafin(String fechafin) {
         this.fechafin = fechafin;
     }
 
-    public List<Tarea> getTarea() {
-        return tarea;
-    }
 
-    public void setTarea(List<Tarea> tarea) {
-        this.tarea = tarea;
-    }
 }

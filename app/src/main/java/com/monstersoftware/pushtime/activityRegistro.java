@@ -17,6 +17,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import OBJETOS.FirebaseReferences;
 
 public class activityRegistro extends AppCompatActivity {
     EditText editTextemail1,editTextemail2,editTextpass1,editTextpass2;
@@ -109,15 +114,23 @@ public class activityRegistro extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Log.d("TAG", "createUserWithEmail:onComplete:" + task.isSuccessful());
                 Toast.makeText(activityRegistro.this,"Todo correcto con su cuenta",Toast.LENGTH_SHORT).show();
+                godatabase();
                 goProyectos();
-
-
                 if (!task.isSuccessful()) {
                     Toast.makeText(activityRegistro.this,"Algo salio mal, revise su conexion",Toast.LENGTH_SHORT).show();
                 }
             }
-        });;
+        });
+
            }
+
+    private void godatabase() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Usuarios");
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser() ;
+        myRef.child(user.getUid()).setValue(1);
+    }
 
 
 }

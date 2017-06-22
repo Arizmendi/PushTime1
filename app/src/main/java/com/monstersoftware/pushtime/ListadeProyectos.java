@@ -31,6 +31,9 @@ public class ListadeProyectos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 gotoAgregarproyecto();
+
+
+
             }
         });
 
@@ -47,24 +50,17 @@ public class ListadeProyectos extends AppCompatActivity {
     }
 
     private void database() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-
-            prueba = (TextView)findViewById(R.id.prueba);
-
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference usuarioref = database.getReference("Usuarios");
-            String email= user.getEmail().toString();
-            prueba.setText("" + email);
-            usuarioref.child(user.getUid()).setValue(email);
+        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Usuarios");
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser() ;
+        myRef.child(user.getUid()).setValue(1);*/
 
 
-        } else {
-                // No user is signed in
-        }
-        //System.out.println("Successfully fetched user data: " );
 
-    }
+            }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
